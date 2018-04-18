@@ -26,19 +26,9 @@ public class LexicographicallyLeastSubString {
         
         for (int i=1;i<str.length()-k;i++) {
             String s=str.substring(i,k+i);
-            if (isLexicographicallySmallerThan(s,least,k))
+            if (s.compareTo(least)<0)
                 least=s;
         }
         System.out.println(least);
     }
-
-    private static boolean isLexicographicallySmallerThan(String s, String least,int k) {
-        for (int i=0;i<k;i++) {
-            if (s.charAt(i)< least.charAt(i))
-                return true;
-            else if (s.charAt(i)>least.charAt(i))
-                return false;
-        }
-        return false;
-    }   
 }
